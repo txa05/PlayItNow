@@ -2,8 +2,11 @@
 #define  PLAYIT_HPP
 
 #include <iostream>
-#include <optional>
+#include <cerrno>
+#include <cstring>
+#include <exception>
 #include <../SFML/Graphics.hpp>
+#include <../SFML/Audio.hpp>
 
 
 # endif
