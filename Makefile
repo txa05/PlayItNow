@@ -5,7 +5,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 HEADER = ./includes/playIt.hpp
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -std=c++17 -I./SFML/include
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -I./SFML/include
 
 SFML_PATH = -L./SFML/build/lib
 
