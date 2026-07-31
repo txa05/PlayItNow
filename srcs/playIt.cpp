@@ -13,13 +13,22 @@ void	findSound(sf::Music &music, const std::string &path)
 int	main(void)
 {
 
-	sf::Window	window(sf::VideoMode({800, 600}), "Testing");
+	sf::RenderWindow	window(sf::VideoMode({1920, 1080}), "Testing");
 	if (!window.isOpen())
 		return (1);
 
 	sf::Music	m;
-	findSound(m, "songs/test.ogg");
+	findSound(m, "externals/songs/test.ogg");
+	sf::Texture	texture;
+	
+	if (!texture.loadFromFile("externals/images/skip_r.png"))
+	{
+		std::cerr << "Erro ao ler a textura" << std::endl;
+		return (1);
+	}
 
+	sf::Sprite	sprite(texture);
+	sprite.setPosition({1450.f, 810.f});
 	//m.play();
 	while (window.isOpen())
 	{
@@ -31,10 +40,14 @@ int	main(void)
 			{
 				if (keyboard->scancode == sf::Keyboard::Scan::Escape)
 				{
-					window.close();
+					m.play();
+					//window.close();
 				}
 			}
 		}
+		window.clear();
+		window.draw(sprite);
+		window.display();
 	}
 	m.stop();
 	return (0);
