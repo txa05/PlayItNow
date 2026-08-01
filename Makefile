@@ -1,5 +1,8 @@
 NAME = playit
-SRCS = ./srcs/playIt.cpp
+
+SRCS = ./srcs/playIt.cpp \
+	./srcs/search_ms.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 
