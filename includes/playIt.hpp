@@ -12,6 +12,17 @@
 
 namespace filesystem = std::filesystem;
 
+class	SoundManager
+{
+	private:
+		std::map<int, std::string>	playlist;
+	public:
+		SoundManager();
+		SoundManager(const SoundManager &other);
+		const SoundManager&	operator=(const SoundManager &other);
+		~SoundManager();
+};
+
 void	search_musics();
 
 # endif
