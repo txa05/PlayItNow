@@ -7,6 +7,11 @@
 #include <exception>
 #include <../SFML/Graphics.hpp>
 #include <../SFML/Audio.hpp>
+#include <map>
+#include <filesystem>
 
+namespace filesystem = std::filesystem;
+
+void	search_musics();
 
 # endif
