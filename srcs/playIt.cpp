@@ -14,11 +14,10 @@ int	main(void)
 {
 
 	sf::RenderWindow	window(sf::VideoMode({1920, 1080}), "Testing");
-	if (!window.isOpen())
-		return (1);
+	SoundManager	soundManager;
 
 	sf::Music	m;
-	findSound(m, "externals/songs/test.ogg");
+	// findSound(m, "externals/songs/test.ogg");
 	sf::Texture	texture;
 	
 	if (!texture.loadFromFile("externals/images/skip_r.png"))
@@ -27,6 +26,7 @@ int	main(void)
 		return (1);
 	}
 
+	search_musics();
 	sf::Sprite	sprite(texture);
 	sprite.setPosition({1450.f, 810.f});
 	//m.play();
@@ -40,8 +40,8 @@ int	main(void)
 			{
 				if (keyboard->scancode == sf::Keyboard::Scan::Escape)
 				{
-					m.play();
-					//window.close();
+					// m.play();
+					window.close();
 				}
 			}
 		}
