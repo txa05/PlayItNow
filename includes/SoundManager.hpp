@@ -6,12 +6,14 @@
 class	SoundManager
 {
 	private:
-		std::map<int, std::string>	playlist;
+		std::map<unsigned int, std::string>	playlist;
+		unsigned int	count;
 	public:
 		SoundManager();
 		SoundManager(const SoundManager &other);
 		const SoundManager&	operator=(const SoundManager &other);
 		~SoundManager();
+		void	addSong(const std::string&);
 };
 
 
