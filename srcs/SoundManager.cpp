@@ -1,4 +1,4 @@
-# include "../includes/SoundManager.hpp"
+#include "../includes/SoundManager.hpp"
 
 SoundManager::SoundManager() : count(0)
 {}

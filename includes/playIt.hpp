@@ -12,7 +12,8 @@
 # include "SoundManager.hpp"
 
 namespace filesystem = std::filesystem;
+class	SoundManager;
 
-void	search_musics();
+void	search_musics(SoundManager&);
 
 # endif

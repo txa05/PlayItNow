@@ -1,15 +1,5 @@
 # include "../includes/playIt.hpp"
 
-void	findSound(sf::Music &music, const std::string &path)
-{
-
-	if (!music.openFromFile(path))
-	{
-		std::cerr << "Failed to open sound file: " << path << std::endl;
-		return ;
-	}
-}
-
 int	main(void)
 {
 
@@ -17,7 +7,6 @@ int	main(void)
 	SoundManager	soundManager;
 
 	sf::Music	m;
-	// findSound(m, "externals/songs/test.ogg");
 	sf::Texture	texture;
 	
 	if (!texture.loadFromFile("externals/images/skip_r.png"))
@@ -26,10 +15,10 @@ int	main(void)
 		return (1);
 	}
 
-	search_musics();
+	search_musics(soundManager);
 	sf::Sprite	sprite(texture);
 	sprite.setPosition({1450.f, 810.f});
-	//m.play();
+
 	while (window.isOpen())
 	{
 		while (auto event = window.pollEvent())
